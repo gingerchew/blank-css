@@ -1,0 +1,32 @@
+.blank {
+    .b-fieldset {
+        position:relative;
+        display:flex;
+        border: unset;
+        padding: .75rem;
+        margin: .25rem;
+        background-color: #fff;
+        border: 1px solid var(--gray);
+        border-radius: 4px;
+        &::after {
+            content: '';
+            position:absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            z-index:0;
+            pointer-events:none;
+            box-shadow:
+                0 1.6px 1px rgba(0, 0, 0, 0.028),
+                0 8px 2.5px rgba(0, 0, 0, 0.042),
+                0 15px 5px rgba(0, 0, 0, 0.07)
+            ;
+            opacity:0;
+            transition:opacity 0.3s ease-out;
+        }
+        &:focus-within::after {
+            opacity: 1;
+        }
+    }
+}

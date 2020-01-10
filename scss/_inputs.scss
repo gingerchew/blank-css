@@ -1,0 +1,78 @@
+.blank {
+    .b-input {
+        --border: 1px solid var(--border-c);
+        width: 100%;
+        height: calc(1em + 1rem + 2px);
+        padding: calc(var(--spacer) / 2) .55rem;
+        margin-bottom: .45rem;
+        border: var(--border);
+        border-radius: 3px;
+        color: var(--black);
+        font-weight: 500;
+        /* prevents zoom on input focus iOS */
+        font-size: 16px;
+        /**/
+        transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        &:focus {
+            outline: none;
+            @include boxshadow;
+        }
+        &:focus-within {
+            --border-c: var(--navy);
+            @include boxshadow;
+        }
+        @include tablet {
+            font-size: .9rem;
+        }
+
+    }
+    .b-input[type="date"] {
+        font-family: sans-serif;
+        @include -webkit {
+            position:relative;
+            &::-webkit-calendar-picker-indicator {
+                /*
+                    Makes it so that a click on the date input on -webkit- browsers
+                    brings up the calendar popup
+                */
+                position:absolute;
+                top:0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                color: transparent;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    .b-icon {
+        position: relative;
+        .b-input {
+            position: relative;
+            padding-left: calc(var(--spacer) * 2);
+        }
+        > .icon {
+            position: absolute;
+            top: calc(var(--spacer) + .1em);
+            left: calc(var(--spacer) * 1.5);
+            z-index: 1;
+            display: block;
+            font-size: inherit;
+            line-height: 0.85em;
+            pointer-events: none;
+            &.start {
+                left: calc(2 * var(--spacer));
+                right: unset;
+            }
+            &.end {
+                right: calc(2 * var(--spacer));
+                left: unset;
+            }
+        }
+    }
+}

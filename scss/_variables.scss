@@ -1,0 +1,26 @@
+$black: #121314;
+$gray: lighten($black, 49%);
+$white: #f6f8fe;
+$blue: #3da9fc;
+$blue_trans: rgba($blue, 0.4);
+$navy: darken($blue, 30%);
+$red: #ef4565;
+
+
+
+:root {
+    --white: #{$white};
+    --black: #{$black};
+    --gray: #{$gray};
+    --blue: #{$blue};
+    --blue_trans: #{$blue_trans};
+    --navy: #{$navy};
+    --red: #{$red};
+    --primary: var(--blue);
+    --secondary: var(--navy);
+    --danger: var(--red);
+
+    --spacer: .5rem;
+
+    --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+}

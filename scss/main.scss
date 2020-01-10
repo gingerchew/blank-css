@@ -1,0 +1,11 @@
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.blank {
+    --border-c: var(--gray);
+}
+
+@import '_containers.scss';
+@import '_inputs.scss';
+@import '_fieldset.scss';

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>blank.css</title>
+    <link rel="stylesheet" href="dist/blank.css">
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+        body {
+            font-size: 16px;
+        }
+        .container {
+            max-width: 992px;
+            width: 100%;
+            margin: 0 auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .w-100 {
+            width: 100%;
+        }
+        .palette {
+            padding: 1rem 3rem;
+            display: flex;
+            flex-flow: wrap;
+        }
+        .palette > .color {
+            padding: 2.5rem;
+            margin-right: .25rem;
+            margin-left: .25rem;
+        }
+        .black {
+            background-color: var(--black);
+        }
+        .gray {
+            background-color: var(--gray);
+        }
+        .white {
+            background-color: var(--white);
+        }
+        .blue {
+            background-color: var(--blue);
+        }
+        .blue_trans {
+            background-color: var(--blue_trans);
+        }
+        .navy {
+            background-color: var(--navy);
+        }
+        .red {
+            background-color: var(--red);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="palette">
+                <span class="color black"></span>
+                <span class="color gray"></span>
+                <span class="color white"></span>
+                <span class="color blue"></span>
+                <span class="color blue_trans"></span>
+                <span class="color navy"></span>
+                <span class="color red"></span>
+            </div>
+        </div>
+        <div class="row blank">
+            <label for="" class="b-label">
+                <input type="text" name="" id="" class="b-input">
+            </label>
+            <label for="" class="b-label">
+                <input class="b-input" type="date">
+            </label>
+        </div>
+        <div class="row blank"><label for="" class="b-label b-icon"><input type="text" class="b-input"><i class="icon">+</i></label></div>
+        <div class="row">
+            <form action="" class="blank b-form w-100">
+                <fieldset class="b-fieldset">
+                    <label class="b-label">
+                        <input type="text" name="text" id="text" class="b-input"/>
+                    </label>
+                </fieldset>
+                <div class="b-container b-auto">
+                    <input type="submit" value="submit" class="b-input"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

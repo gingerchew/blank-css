@@ -1,0 +1,159 @@
+:root {
+  --white: #f6f8fe;
+  --black: #121314;
+  --gray: #8a9096;
+  --blue: #3da9fc;
+  --blue_trans: rgba(61, 169, 252, 0.4);
+  --navy: #025a9e;
+  --red: #ef4565;
+  --primary: var(--blue);
+  --secondary: var(--navy);
+  --danger: var(--red);
+  --spacer: .5rem;
+  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.blank {
+  --border-c: var(--gray);
+}
+
+.blank .b-auto, .blank .b-label, .blank .b-container, .blank .b-half, .blank .b-quarter {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding-right: var(--spacer);
+  padding-left: var(--spacer);
+}
+
+.blank .b-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.blank .b-label,
+.blank .b-container {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.blank .b-input {
+  --border: 1px solid var(--border-c);
+  width: 100%;
+  height: calc(1em + 1rem + 2px);
+  padding: calc(var(--spacer) / 2) 0.55rem;
+  margin-bottom: .45rem;
+  border: var(--border);
+  border-radius: 3px;
+  color: var(--black);
+  font-weight: 500;
+  /* prevents zoom on input focus iOS */
+  font-size: 16px;
+  /**/
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.blank .b-input:focus {
+  outline: none;
+  box-shadow: 2px 0px 0 0.25px var(--blue_trans), 0 2.25px 0 0.25px var(--blue_trans), 0 -2.25px 0 0.25px var(--blue_trans), -2px 0px 0 0.25px var(--blue_trans);
+}
+
+.blank .b-input:focus-within {
+  --border-c: var(--navy);
+  box-shadow: 2px 0px 0 0.25px var(--blue_trans), 0 2.25px 0 0.25px var(--blue_trans), 0 -2.25px 0 0.25px var(--blue_trans), -2px 0px 0 0.25px var(--blue_trans);
+}
+
+@media (min-width: 576px) {
+  .blank .b-input {
+    font-size: .9rem;
+  }
+}
+
+.blank .b-input[type="date"] {
+  font-family: sans-serif;
+}
+
+@supports (-webkit-appearance: none) {
+  .blank .b-input[type="date"] {
+    position: relative;
+  }
+  .blank .b-input[type="date"]::-webkit-calendar-picker-indicator {
+    /*
+                    Makes it so that a click on the date input on -webkit- browsers
+                    brings up the calendar popup
+                */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    color: transparent;
+  }
+  .blank .b-input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background-color: transparent;
+  }
+}
+
+.blank .b-icon {
+  position: relative;
+}
+
+.blank .b-icon .b-input {
+  position: relative;
+  padding-left: calc(var(--spacer) * 2);
+}
+
+.blank .b-icon > .icon {
+  position: absolute;
+  top: calc(var(--spacer) + .1em);
+  left: calc(var(--spacer) * 1.5);
+  z-index: 1;
+  display: block;
+  font-size: inherit;
+  line-height: 0.85em;
+  pointer-events: none;
+}
+
+.blank .b-icon > .icon.start {
+  left: calc(2 * var(--spacer));
+  right: unset;
+}
+
+.blank .b-icon > .icon.end {
+  right: calc(2 * var(--spacer));
+  left: unset;
+}
+
+.blank .b-fieldset {
+  position: relative;
+  display: flex;
+  border: unset;
+  padding: .75rem;
+  margin: .25rem;
+  background-color: #fff;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+}
+
+.blank .b-fieldset::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  box-shadow: 0 1.6px 1px rgba(0, 0, 0, 0.028), 0 8px 2.5px rgba(0, 0, 0, 0.042), 0 15px 5px rgba(0, 0, 0, 0.07);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.blank .b-fieldset:focus-within::after {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=blank.css.map */

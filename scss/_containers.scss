@@ -1,0 +1,25 @@
+$containers:auto,label,container,half,quarter;
+%base-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-right: var(--spacer);
+    padding-left: var(--spacer);
+}
+.blank {
+    @each $container in $containers {
+        .b-#{$container} {
+            @extend %base-container;
+        }
+    }
+    .b-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+    .b-label,
+    .b-container {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+}

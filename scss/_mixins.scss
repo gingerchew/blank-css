@@ -1,0 +1,20 @@
+@mixin tablet {
+    @media (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin -webkit {
+    @supports (-webkit-appearance: none) {
+        @content;
+    }
+}
+
+@mixin boxshadow {
+    box-shadow: 
+        2px 0px 0 .25px var(--blue_trans),
+        0 2.25px 0 .25px var(--blue_trans),
+        0 -2.25px 0 .25px var(--blue_trans),
+        -2px 0px 0 .25px var(--blue_trans)
+    ;
+}
