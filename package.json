@@ -1,8 +1,8 @@
 {
 	"name": "blank-css",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"version": "0.0.1",
+	"description": "A highly accessible and stylish stylesheet",
+	"main": "dist/blank.css",
 	"scripts": {
 		"build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
 		"build-autoprefix": "postcss --use autoprefixer --map false --output dist/blank.css dist/blank.css",
